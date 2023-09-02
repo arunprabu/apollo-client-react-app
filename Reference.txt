@@ -1,0 +1,35 @@
+Refer: https://www.apollographql.com/docs/react/get-started
+
+Step 1
+----
+  npm install @apollo/client graphql
+
+Step 2: 
+------
+  Initialize ApolloClient in index.js 
+  
+  import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client';
+
+  const client = new ApolloClient({
+    uri: 'http://localhost:9000/graphql',
+    cache: new InMemoryCache(),
+  });
+
+Step 3:
+-------
+  Then wrap App comp inside ApolloClient
+
+  <ApolloProvider client={client}>
+    <App/>
+  </ApolloClient>
+
+
+Step 4:
+-----
+  then, from the desired component connect to graphql server 
+
+  // Import everything needed to use the `useQuery` hook
+  import { useQuery, gql } from '@apollo/client';
+
+
+
