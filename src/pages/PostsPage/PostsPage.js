@@ -20,7 +20,12 @@ const PostsPage = () => {
 
   return (
     <div className="row">
-      <h1>Posts</h1>
+      <h1>Posts </h1>
+      <div className="text-end">
+        <Link to="add" className="btn btn-primary">
+          Create a New Post
+        </Link>
+      </div>
 
       {data.posts?.map((post) => {
         return (
