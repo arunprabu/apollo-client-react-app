@@ -6,9 +6,10 @@ const UserList = () => {
   const [cursor, setCursor] = useState(null);
   console.log(cursor);
 
+  // constructing query
   const GET_USERS = gql`
-    query ListUsers($cursor: String, $limit: Int) {
-      users(cursor: $cursor, limit: $limit) {
+    query ListUsers($limit: Int, $cursor: String) {
+      users(limit: $limit, cursor: $cursor) {
         _id
         name
         email
@@ -17,7 +18,7 @@ const UserList = () => {
     }
   `;
 
-  const { data, loading, error } = useQuery(GET_USERS, {
+  const { loading, error, data } = useQuery(GET_USERS, {
     variables: {
       cursor: cursor, // Initialize with null to fetch the first page
       limit: 2, // Adjust the limit as needed

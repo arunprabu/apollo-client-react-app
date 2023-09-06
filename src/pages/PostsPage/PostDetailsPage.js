@@ -3,6 +3,7 @@ import { useQuery, gql } from "@apollo/client";
 import { useParams } from "react-router-dom";
 
 const PostDetailsPage = () => {
+  // reading url param
   const { postId } = useParams();
 
   const GET_POSTS = gql`
