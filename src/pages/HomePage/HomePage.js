@@ -2,9 +2,8 @@ import React from 'react'
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="text-center">
       <h1>Home Page</h1>
-      
     </div>
   );
 }
