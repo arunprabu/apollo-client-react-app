@@ -4,6 +4,7 @@ import { useState } from "react";
 
 const UserList = () => {
   const [cursor, setCursor] = useState(null);
+  console.log(cursor);
 
   const GET_USERS = gql`
     query ListUsers($cursor: String, $limit: Int) {
@@ -18,7 +19,7 @@ const UserList = () => {
 
   const { data, loading, error } = useQuery(GET_USERS, {
     variables: {
-      cursor: null, // Initialize with null to fetch the first page
+      cursor: cursor, // Initialize with null to fetch the first page
       limit: 2, // Adjust the limit as needed
     },
   });
