@@ -49,7 +49,9 @@ const UserList = () => {
             <button
               className="page-link"
               onClick={() => {
-                setCursor(users[0]._id);
+                if(users){
+                  setCursor(users[0]._id);
+                }
                 // Fetch previous page of users using the new cursor
               }}
             >
